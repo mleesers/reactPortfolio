@@ -1,0 +1,26 @@
+[
+    {
+        "id":"0",
+        "picture":"./folder/LongRides.JPG",
+        "description":"Long Rides:  MYSQL,node,Sequelize,Heroku,handlebars",
+        "link":"https://github.com/mleesers/Long_Rides_project_two"
+    },
+    {
+        "id":"1",
+        "picture":"./folder/Weather.JPG",
+        "description":"Weather Forecast:  HTML/CSS/JavaScript/API's",
+        "link":"https://github.com/mleesers/Weather-Forecast"
+    },
+    {
+        "id":"2",
+        "picture":"./folder/Space.JPG",
+        "description":"This-Day-In-Space: HTML,CSS,JavaScript/API's",
+        "link":"https://github.com/mleesers/This-Day-In-Space"
+    },
+    {
+        "id":"3",
+        "picture":"./folder/Hangman.JPG",
+        "description":"Hangman: Python",
+        "link":"https://github.com/mleesers/Hangman-Game"
+    }
+]
