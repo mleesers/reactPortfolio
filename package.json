@@ -15,7 +15,7 @@
     "styled-components": "^5.3.10",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://mleesers.github.io/reactPortfolio",
+  "homepage": "https://mleesers.github.io/reactPortfolio/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -b main -d build",
