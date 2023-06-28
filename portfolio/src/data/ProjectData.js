@@ -1,5 +1,8 @@
 export const ProjectData = [
     {
-        title: 'About Me',
-        path: '/about',
+        title: 'Old Portfolio',
+        path: '/old-portfolio',
+        label: 'JavaScript, HTML, CSS',
+        image: './images/old-portfolio.png',
     }
+]
