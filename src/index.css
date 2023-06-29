@@ -11,3 +11,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container{
+  font-size: 30px;
+  position: absolute;
+  width: fit-content;
+  height: 50%;
+  top: 0;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+    margin-left: 25px;
+  }
+    
+  }
+  

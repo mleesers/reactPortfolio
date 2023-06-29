@@ -1,5 +1,7 @@
 import React from 'react'
 import styled, {css} from 'styled-components/macro'
+import { Link } from 'react-router-dom'
+import background from '../images/background.mp4'
 
 const HeroSection = styled.section`
     height:100vh;
@@ -17,12 +19,17 @@ const HeroWrapper = styled.div`
     position: relative;
     `
 
+ 
 const Hero = () => {
   return (
     <HeroSection>
-        <HeroWrapper>
-            <h1>Heroooo</h1>
-        </HeroWrapper>
+        <video autoPlay loop muted id='video'>
+            <source src={background} type='video/mp4' />
+        </video>
+        <div className="container">
+            <h1>Welcome</h1>
+            <h2>to my website!</h2>
+        </div>
     </HeroSection>
   );
 };
