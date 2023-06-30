@@ -2,7 +2,7 @@ import React from 'react'
 import NavBar from './components/navBar'
 import GlobalStyle from './globalStyles';
 import Hero from './components/Hero';
-
+import AboutMe from './components/AboutMe';
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
       <GlobalStyle />
       <NavBar />
       <Hero />
+      <AboutMe />
     </>
   );
 }
