@@ -20,7 +20,7 @@ const MainArea = styled.div`
     color: #12091E;
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 3s ease, transform 3s ease, visibility 2s 3s;
+    transition: opacity 1s ease, transform 1s ease, visibility 0s 1s;
     visibility: hidden;
     @media screen and (max-width: 768px) {
         flex-direction: column;
@@ -33,7 +33,7 @@ const MainArea = styled.div`
       opacity: 1;
       transform: translateY(0);
       visibility: visible;
-      transition-delay: 1s;
+      transition-delay: 0s;
     `}
     `
 
@@ -50,7 +50,7 @@ const SectionTitle = styled.h1`
     font-size: 2rem;
     color: #12091E;
     transform: translateX(-500%);
-    transition: transform 3s ease;
+    transition: transform 1s ease;
 
     ${(props) =>
     props.isVisible &&

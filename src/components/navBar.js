@@ -77,19 +77,3 @@ const NavBar = () => {
 }
 
 export default NavBar
-
-{/* <div className="navBar">
-        <h1>Michael Leeser-Smith</h1>
-        <ul>
-          <li><a href="#about" className="links">About</a></li>
-          <li><a href="#projects" className="links">Projects</a></li>
-          <li><a href="#contact" className="links">Contact Me</a></li>
-          <li><a href="" className="links">Resume</a></li>
-        </ul>
-      </div>
-      <div className="main">
-      </div>
-      <div className="contact">
-      </div>
-      <div className="footer">
-      </div> */}

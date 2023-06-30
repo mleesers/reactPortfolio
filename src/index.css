@@ -11,31 +11,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-video{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.container{
-  font-size: 30px;
-  position: absolute;
-  margin-top: 75px;
-  margin-left: 25px;
-  width: 50%;
-  height: 50%;
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: left;
-  color: white;
-  @media screen and (max-width: 768px) {
-    font-size: 20px;
-    margin-left: 10px;
-  }
-    
-  }
   
 #myImage{
   width:300px;
