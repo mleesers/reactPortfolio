@@ -103,8 +103,7 @@ const AboutMe = () => {
         <MainArea isVisible={isVisible}>
           <Photo>
             <img src={me} id="myImage" alt="me" />
-            <BiUpArrowAlt />
-            <h1>Thats me :)</h1>
+            <h1>That's me {<BiUpArrowAlt />} :)</h1>
           </Photo>
           <TextArea id="text">
             <h1>

@@ -22,6 +22,9 @@ const Logo = styled(Link)`
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: bold;
+    @media screen and (max-width: 768px) {
+        font-size: 1rem;
+    }
     `
 const MenuBars = styled(BsCodeSlash)`
     display: none;
