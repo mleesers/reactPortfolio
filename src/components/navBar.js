@@ -15,6 +15,9 @@ const Nav = styled.nav`
     align-items: center;
     width: 100%;
     background-image: linear-gradient(to right,#12091E,#D05E1D,#E1B24D);
+    @media screen and (max-width: 768px) {
+        padding: 0;
+    }
 `
 const Logo = styled(Link)`
     color: white;
@@ -24,7 +27,6 @@ const Logo = styled(Link)`
     font-weight: bold;
     @media screen and (max-width: 768px) {
         font-size: 20px;
-        left: 0;
     }
     `
 const MenuBars = styled(BsCodeSlash)`
