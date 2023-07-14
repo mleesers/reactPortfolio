@@ -16,7 +16,7 @@ const Nav = styled.nav`
     width: 100%;
     background-image: linear-gradient(to right,#12091E,#D05E1D,#E1B24D);
     @media screen and (max-width: 768px) {
-        padding: 0;
+        padding: 1rem 1rem;
     }
 `
 const Logo = styled(Link)`
