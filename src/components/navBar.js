@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { MenuData } from '../data/MenuData'
 import { Button } from './button'
-import { BsCodeSlash } from 'react-icons/bs'
+import { HiBars3BottomRight } from 'react-icons/hi2'
 
 const Nav = styled.nav`
     height: 60px;
@@ -29,13 +29,13 @@ const Logo = styled(Link)`
         font-size: 20px;
     }
     `
-const MenuBars = styled(BsCodeSlash)`
+const MenuBars = styled(HiBars3BottomRight)`
     display: none;
     @media screen and (max-width: 768px) {
         display: block;
         color: #fff;
-        height: 40px;
-        width: 40px;
+        height: 35px;
+        width: 35px;
         cursor: pointer;
         position: absolute;
         top: 0;
