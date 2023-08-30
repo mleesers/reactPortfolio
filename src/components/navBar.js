@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { MenuData } from '../data/MenuData'
-import { Button } from './button'
 import { HiBars3BottomRight } from 'react-icons/hi2'
 
 const Nav = styled.nav`
@@ -62,6 +61,7 @@ const NavBtn = styled.div`
     display: flex;
     align-items: center;
     margin-right: 24px;`
+
 const NavBar = () => {
   return (
     <Nav>
@@ -74,9 +74,6 @@ const NavBar = () => {
                 </NavMenuLinks>
             ))}
         </NavMenu>
-        {/* <NavBtn>
-            <Button to="/contact" primary='true'>Contact Me</Button>
-        </NavBtn> */}
     </Nav>
     
   )

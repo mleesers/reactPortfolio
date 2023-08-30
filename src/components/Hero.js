@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 import styled, {css} from 'styled-components/macro'
-import background from '../images/background.mp4'
+
 
 const HeroSection = styled.section`
     height:100vh;
@@ -8,22 +8,19 @@ const HeroSection = styled.section`
     position: relative;
     overflow: hidden;
 `    
-const HeroWrapper = styled.div`
+const VimeoVideoWrapper = styled.div`
+    padding: 56.25% 0 0 0; // This ensures a 16:9 aspect ratio
+    position: relative;
+`;
+
+const VimeoIframe = styled.iframe`
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
-    `
-
-const Video = styled.video`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  `
-
+    border: none;
+`;
 const Area = styled.div`
   font-size: 30px;
   position: absolute;
@@ -47,11 +44,27 @@ const Area = styled.div`
 
 
 const Hero = () => {
-  return (
+  
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://player.vimeo.com/api/player.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+    return (
     <HeroSection>
-        <Video autoPlay loop muted id='video'>
-            <source src={background} type='video/mp4' />
-        </Video>
+        <VimeoVideoWrapper>
+        <VimeoIframe 
+              src="https://player.vimeo.com/video/859574925?autoplay=1&loop=1&controls=0&byline=0&title=0&portrait=0&background=1"
+              allow="autoplay; fullscreen; picture-in-picture"
+              title="background"
+          ></VimeoIframe>
+        </VimeoVideoWrapper>
         <Area className="container">
             <h1>Welcome</h1>
             <h2>to my website!</h2>
@@ -60,4 +73,4 @@ const Hero = () => {
   );
 };
 
-export default Hero
+export default Hero;
