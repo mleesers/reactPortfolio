@@ -9,6 +9,9 @@ const AboutMeSection = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @media screen and (max-width: 768px) {
+        margin-top: none;
+    }
 `
 const MainArea = styled.div`
     display: flex;
