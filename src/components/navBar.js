@@ -69,6 +69,7 @@ const NavBar = ({toggle}) => {
         <Logo>Michael Leeser-Smith</Logo>
         <MenuBars onClick={toggle}/>
         <NavMenu>
+            
             {MenuData.map((item, index) => (
                 <NavMenuLinks to={item.link} key={index}>
                 {item.title}

@@ -17,28 +17,28 @@ export const ProjectData = [
       title: 'Weather Dashboard',
       label: 'JavaScript, HTML, CSS, APIs',
       image: weatherDashboardImage,
-      link: 'empty for now'
+      link: 'https://github.com/mleesers/Weather-Forecast'
     }
     ,
     {
       title: 'Long Rides',
       label: 'JavaScript, HTML, CSS, APIs',
       image: longRidesImage,
-      link: 'empty for now'
+      link: 'https://github.com/mleesers/Long_Rides_project_two'
     }
     ,
     {
       title: 'This Day in Space',
       label: 'JavaScript, HTML, CSS, APIs',
       image: thisDayInSpaceImage,
-      link: 'empty for now'
+      link: 'https://github.com/mleesers/This-Day-In-Space'
     }
     ,
     {
       title: 'Hangman',
       label: 'HTML, CSS, JavaScript',
       image: hangmanImage,
-      link: 'empty for now'
+      link: 'https://github.com/mleesers/HangmanWebsite'
     },
 ];
   

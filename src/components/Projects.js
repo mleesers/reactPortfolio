@@ -1,9 +1,8 @@
-import React, {useState, useRef} from "react";
+import React, {useState, useRef, useEffect} from "react";
 import { Button } from "./Button";
 import styled, { css } from 'styled-components/macro';
 import { IoMdArrowRoundForward } from 'react-icons/io';
 import { IoArrowForward, IoArrowBack } from 'react-icons/io5';
-import { useEffect } from "react";
 
 const HeroSection = styled.section`
   height: 100vh;
@@ -147,18 +146,18 @@ const Projects = ({ slides }) => {
   const timeout = useRef(null);
   const [titleVisible, setTitleVisible] = useState(false);
 
-  // useEffect(() => {
-  //   const nextSlide = () => {
-  //     setCurrent((current) => (current === length - 1 ? 0 : current + 1));
-  //   };
-  //   timeout.current = setTimeout(nextSlide, 7500);
+  useEffect(() => {
+    const nextSlide = () => {
+      setCurrent((current) => (current === length - 1 ? 0 : current + 1));
+    };
+    timeout.current = setTimeout(nextSlide, 7500);
 
-  //   return function () {
-  //     if (timeout.current) {
-  //       clearTimeout(timeout.current);
-  //     }
-  //   };
-  // }, [current, length]);
+    return function () {
+      if (timeout.current) {
+        clearTimeout(timeout.current);
+      }
+    };
+  }, [current, length]);
 
   const nextSlide = () => {
     if (timeout.current) {
