@@ -45,6 +45,7 @@ const MenuBars = styled(HiBars3BottomRight)`
 const NavMenuLinks = styled(Link)`
     text-decoration: none;
     color: white;
+    cursor: pointer;
     padding: 10px;
     margin-right: 1.5rem;
     &:hover {
@@ -62,11 +63,11 @@ const NavBtn = styled.div`
     align-items: center;
     margin-right: 24px;`
 
-const NavBar = () => {
+const NavBar = ({toggle}) => {
   return (
     <Nav>
         <Logo>Michael Leeser-Smith</Logo>
-        <MenuBars />
+        <MenuBars onClick={toggle}/>
         <NavMenu>
             {MenuData.map((item, index) => (
                 <NavMenuLinks to={item.link} key={index}>

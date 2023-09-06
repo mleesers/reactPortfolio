@@ -101,7 +101,7 @@ const AboutMe = () => {
     }, []);
   
     return (
-      <AboutMeSection>
+      <AboutMeSection id='about'>
         <SectionTitle isVisible={isVisible}>About Me</SectionTitle>
         <MainArea isVisible={isVisible}>
           <Photo>

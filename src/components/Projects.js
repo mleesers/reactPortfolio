@@ -123,7 +123,7 @@ const arrowButtons = css`
 const Title = styled.h1`
   font-size: 2rem;
   color: #12091E;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   opacity: 0;
   transform: translateX(-500%);
   transition: opacity 1s ease, transform 1s ease;
@@ -141,90 +141,90 @@ const PrevArrow = styled(IoArrowBack)`
 const NextArrow = styled(IoArrowForward)`
   ${arrowButtons}`
 
-  const Projects = ({ slides }) => {
-    const [current, setCurrent] = useState(0);
-    const length = slides.length;
-    const timeout = useRef(null);
-    const [titleVisible, setTitleVisible] = useState(false);
-  
-    // useEffect(() => {
-    //   const nextSlide = () => {
-    //     setCurrent((current) => (current === length - 1 ? 0 : current + 1));
-    //   };
-    //   timeout.current = setTimeout(nextSlide, 7500);
-  
-    //   return function () {
-    //     if (timeout.current) {
-    //       clearTimeout(timeout.current);
-    //     }
-    //   };
-    // }, [current, length]);
-  
-    const nextSlide = () => {
-      if (timeout.current) {
-        clearTimeout(timeout.current);
-      }
-      setCurrent(current === length - 1 ? 0 : current + 1);
-    };
-  
-    const PrevSlide = () => {
-      if (timeout.current) {
-        clearTimeout(timeout.current);
-      }
-      setCurrent(current === 0 ? length - 1 : current - 1);
-    };
-  
-    useEffect(() => {
-      const handleScroll = () => {
-        const element = document.getElementById('projectTitle');
-        const position = element.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-  
-        if (position < windowHeight && position > -element.offsetHeight) {
-          setTitleVisible(true);
-        } else {
-          setTitleVisible(false);
-        }
-      };
-  
-      window.addEventListener('scroll', handleScroll);
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    }, []);
-  
-    return (
-      <HeroSection>
-        <Title isVisible={titleVisible} id="projectTitle">
-          Some of my Projects
-        </Title>
-        <HeroWrapper>
-          {slides.map((slide, index) => {
-            return (
-              <HeroSlide key={index}>
-                {index === current && (
-                  <HeroSlider>
-                    <HeroImage src={slide.image} />
-                    <HeroContent>
-                      <h1>{slide.title}</h1>
-                      <p>{slide.label}</p>
-                      <Button to={slide.link} target="_blank" primary="true">
-                        View Project
-                        <Arrow />
-                      </Button>
-                    </HeroContent>
-                  </HeroSlider>
-                )}
-              </HeroSlide>
-            );
-          })}
-          <SliderButtons>
-            <PrevArrow onClick={PrevSlide} />
-            <NextArrow onClick={nextSlide} />
-          </SliderButtons>
-        </HeroWrapper>
-      </HeroSection>
-    );
+const Projects = ({ slides }) => {
+  const [current, setCurrent] = useState(0);
+  const length = slides.length;
+  const timeout = useRef(null);
+  const [titleVisible, setTitleVisible] = useState(false);
+
+  // useEffect(() => {
+  //   const nextSlide = () => {
+  //     setCurrent((current) => (current === length - 1 ? 0 : current + 1));
+  //   };
+  //   timeout.current = setTimeout(nextSlide, 7500);
+
+  //   return function () {
+  //     if (timeout.current) {
+  //       clearTimeout(timeout.current);
+  //     }
+  //   };
+  // }, [current, length]);
+
+  const nextSlide = () => {
+    if (timeout.current) {
+      clearTimeout(timeout.current);
+    }
+    setCurrent(current === length - 1 ? 0 : current + 1);
   };
-  
-  export default Projects;
+
+  const PrevSlide = () => {
+    if (timeout.current) {
+      clearTimeout(timeout.current);
+    }
+    setCurrent(current === 0 ? length - 1 : current - 1);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const element = document.getElementById('projectTitle');
+      const position = element.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      if (position < windowHeight && position > -element.offsetHeight) {
+        setTitleVisible(true);
+      } else {
+        setTitleVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  return (
+    <HeroSection id='projects'>
+      <Title isVisible={titleVisible} id="projectTitle">
+        Some of my Projects
+      </Title>
+      <HeroWrapper>
+        {slides.map((slide, index) => {
+          return (
+            <HeroSlide key={index}>
+              {index === current && (
+                <HeroSlider>
+                  <HeroImage src={slide.image} />
+                  <HeroContent>
+                    <h1>{slide.title}</h1>
+                    <p>{slide.label}</p>
+                    <Button to={slide.link} target="_blank" primary="true">
+                      View Project
+                      <Arrow />
+                    </Button>
+                  </HeroContent>
+                </HeroSlider>
+              )}
+            </HeroSlide>
+          );
+        })}
+        <SliderButtons>
+          <PrevArrow onClick={PrevSlide} />
+          <NextArrow onClick={nextSlide} />
+        </SliderButtons>
+      </HeroWrapper>
+    </HeroSection>
+  );
+};
+
+export default Projects;

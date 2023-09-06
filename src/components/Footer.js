@@ -10,7 +10,7 @@ import styled from "styled-components/macro";
 const Footer = () => {
     return (
 
-        <h1>Footer</h1>
+        <h1 id='contact'>Footer</h1>
     )
 }
 
