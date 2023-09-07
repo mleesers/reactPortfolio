@@ -1,5 +1,5 @@
 import oldPortfolioImage from '../images/oldPortfolio.png';
-// import weatherDashboardImage from '../images/Weather.jpg';
+import weatherDashboardImage from '../images/Weather.jpg';
 import longRidesImage from '../images/LongRides.jpg';
 import thisDayInSpaceImage from '../images/Space.jpg';
 import hangmanImage from '../images/HangmanWebsite.png';
@@ -7,22 +7,22 @@ import hangmanImage from '../images/HangmanWebsite.png';
 
 export const ProjectData = [
     {
-      title: 'Old Portfolio',
+      title: 'My Old Portfolio',
       label: 'JavaScript, HTML, CSS',
       image: oldPortfolioImage,
       link: 'https://github.com/mleesers/Portfolio'
     }
     ,
-    // {
-    // //   title: 'Weather Dashboard',
-    // //   label: 'JavaScript, HTML, CSS, APIs',
-    // //   image: weatherDashboardImage,
-    // //   link: 'https://github.com/mleesers/Weather-Forecast'
-    // // }
-    // ,
+    {
+      title: 'Weather Dashboard',
+      label: 'JavaScript, HTML, CSS, APIs',
+      image: weatherDashboardImage,
+      link: 'https://github.com/mleesers/Weather-Forecast'
+    }
+    ,
     {
       title: 'Long Rides',
-      label: 'JavaScript, HTML, CSS, APIs',
+      label: 'APIs, SQL, Node, Express, Heroku',
       image: longRidesImage,
       link: 'https://github.com/mleesers/Long_Rides_project_two'
     }

@@ -1,7 +1,9 @@
+
+
 export const FooterData = [
 {
     title: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/michael-leeser-2a1a1b1b0/',
+    link: 'https://www.linkedin.com/in/michael-leeser-smith/',
     target: '_blank'
 },
 {
@@ -11,12 +13,12 @@ export const FooterData = [
 },
 {
     title: 'mleesersmith@gmail.com',
-    link: 'null',
-    target: '_blank'
+    link: '',
+    target: ''
 },
 {
     title: 'Phone Number',
-    link: 'null',
-    target: '_blank'
+    link: '',
+    target: ''
 }
 ]
