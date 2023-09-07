@@ -45,11 +45,13 @@ const MenuBars = styled(HiBars3BottomRight)`
 const NavMenuLinks = styled(Link)`
     text-decoration: none;
     color: white;
+    font-weight: bold;
     cursor: pointer;
-    padding: 10px;
+    padding: 15px;
     margin-right: 1.5rem;
     &:hover {
-        transform: translateY(-2px)`
+        transform: translateY(-2px);
+        color: #12091E;`
 const NavMenu = styled.div`
     display: flex;
     align-items: center;
@@ -60,22 +62,32 @@ const NavMenu = styled.div`
     `;
 
 
-const NavBar = ({toggle}) => {
-  return (
-    <Nav>
+const NavBar = ({ toggle }) => {
+    const handleScrollToSection = (e, sectionId) => {
+        e.preventDefault();
+        const section = document.getElementById(sectionId);
+        if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+    
+    return (
+        <Nav>
         <Logo>Michael Leeser-Smith</Logo>
-        <MenuBars onClick={toggle}/>
+        <MenuBars onClick={toggle} />
         <NavMenu>
-            
             {MenuData.map((item, index) => (
-                <NavMenuLinks to={item.link} key={index}>
+            <NavMenuLinks
+                key={index}
+                href={`#${item.link}`} // Use '#' followed by the section ID
+                onClick={(e) => handleScrollToSection(e, item.link)}
+            >
                 {item.title}
-                </NavMenuLinks>
+            </NavMenuLinks>
             ))}
         </NavMenu>
-    </Nav>
-    
-  )
-}
+        </Nav>
+    );
+    };
 
 export default NavBar

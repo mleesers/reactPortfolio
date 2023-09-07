@@ -60,24 +60,36 @@ const DropdownLink = styled(Link)`
 `
 
 
-const Dropdown = ({isOpen,toggle}) => {
-  return (
-    <DropdownContainer isOpen={isOpen} onClick={toggle}>
+const Dropdown = ({ isOpen, toggle }) => {
+    const handleScrollToSection = (e, sectionId) => {
+      e.preventDefault();
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+      toggle(); // Close the dropdown after clicking a link
+    };
+  
+    return (
+      <DropdownContainer isOpen={isOpen} onClick={toggle}>
         <Icon onClick={toggle}>
-            <CloseIcon />
+          <CloseIcon />
         </Icon>
         <DropdownWrapper>
-            <DropdownMenu>
-                {MenuData.map((item, index) => (
-                    <DropdownLink to={item.link} key={index}>
-                        {item.title}
-                    </DropdownLink>
-                ))}
-            </DropdownMenu>
-
+          <DropdownMenu>
+            {MenuData.map((item, index) => (
+              <DropdownLink
+                key={index}
+                href={`#${item.link}`}
+                onClick={(e) => handleScrollToSection(e, item.link)}
+              >
+                {item.title}
+              </DropdownLink>
+            ))}
+          </DropdownMenu>
         </DropdownWrapper>
-    </DropdownContainer>
-  )
-}
+      </DropdownContainer>
+    );
+  };
 
 export default Dropdown

@@ -12,12 +12,17 @@ export const FooterData = [
     target: '_blank'
 },
 {
-    title: 'mleesersmith@gmail.com',
+    title: 'Email',
     link: '',
     target: ''
 },
 {
     title: 'Phone Number',
+    link: '',
+    target: ''
+},
+{
+    title: 'Resume',
     link: '',
     target: ''
 }

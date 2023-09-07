@@ -5,8 +5,9 @@ import {FooterData} from "../data/FooterData";
 import logoImage from "../images/logo1.png"
 import { IoLogoLinkedin, IoLogoGithub } from "react-icons/io5";
 import { FaEnvelope, FaPhone } from "react-icons/fa";
-import contactVCF from "../resources/contacts.vcf"
-
+import contactVCF from "../resources/contacts.vcf";
+import Resume from "../resources/Resume.pdf";
+import {HiDocumentDownload} from "react-icons/hi";
 const FooterContainer = styled.div`
     background-color: #0d0909;
     display: flex;
@@ -24,6 +25,7 @@ const FooterLinks = styled(Link)`
     padding: 1rem;
     &:hover {
         transform: translateY(-2px);
+        color: #E1B24D;
     }
     @media screen and (max-width: 768px) {
         display: none;
@@ -93,6 +95,17 @@ const Phone = styled(FaPhone)`
     cursor: pointer;
     &:hover {
         transform: translateY(-2px);
+}
+`
+
+const ResumeIcon = styled(HiDocumentDownload)`
+    margin-right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    color: white;
+    cursor: pointer;
+    &:hover {
+        transform: translateY(-2px);
     }
 `
 const sendEmail = () => {
@@ -116,9 +129,17 @@ const Footer = () => {
       a.click();
       document.body.removeChild(a);
     };
+    const downloadResume = () => {
+        const a = document.createElement("a");
+        a.href = Resume; 
+        a.download = "Resume.pdf";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    };
   
     return (
-      <FooterContainer>
+      <FooterContainer id='contact'>
         <Logos>
             <a href="https://www.linkedin.com/in/michael-leeser-smith/" target="_blank" rel="noreferrer">
             <LinkedIn />
@@ -128,6 +149,7 @@ const Footer = () => {
             </a>
             <Email onClick={sendEmail} /> 
             <Phone onClick={downloadContactCard}/>
+            <ResumeIcon onClick={downloadResume}/>
         </Logos>
         
         {FooterData.map((item, index) => (
@@ -136,7 +158,7 @@ const Footer = () => {
                 target={item.target}
                 key={index}
                 onClick={() =>
-                (item.title === "Phone Number" && downloadContactCard()) || (item.title === "mleesersmith@gmail.com" && sendEmail())
+                (item.title === "Phone Number" && downloadContactCard()) || (item.title === "mleesersmith@gmail.com" && sendEmail()) || (item.title === "Resume" && downloadResume())
                 }
                 >
                 {item.title}

@@ -10,22 +10,29 @@ const HeroSection = styled.section`
 
 const VimeoVideoWrapper = styled.div`
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   pointer-events: none; // This makes sure user interactions pass through to elements below
 `;
 
+const VideoContainer = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 30%; // Keep this centered
+  transform: translate(-50%, -50%);
+  width: 150%;
+  height: 150%;
+  overflow: hidden;
+`;
+
 const VimeoIframe = styled.iframe`
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 50%;  // Adjust this value to move the video within the viewport
   transform: translate(-50%, -50%);
-  width: 150%; // Stretch out to ensure it covers, you might need to adjust this
-  height: 150%;
+  width: 100%;
+  height: 100%;
   border: none;
-  object-fit: cover;
 `;
 
 const Area = styled.div`
@@ -59,15 +66,25 @@ const Hero = () => {
       document.body.removeChild(script);
     };
   }, []);
-
+  const adjustVideoSize = (e) => {
+    const iframe = e.target;
+    const ratio = 16 / 9;
+    const width = iframe.offsetWidth;
+    const height = width / ratio;
+    iframe.style.height = `${height}px`;
+    iframe.style.width = `${width}px`;
+  };
   return (
     <HeroSection>
       <VimeoVideoWrapper>
-        <VimeoIframe 
-          src="https://player.vimeo.com/video/859574925?autoplay=1&loop=1&controls=0&byline=0&title=0&portrait=0&background=1"
-          allow="autoplay; fullscreen; picture-in-picture"
-          title="background"
-        ></VimeoIframe>
+        <VideoContainer>
+          <VimeoIframe 
+            onLoad={adjustVideoSize}
+            src="https://player.vimeo.com/video/859574925?autoplay=1&loop=1&controls=0&byline=0&title=0&portrait=0&background=1"
+            allow="autoplay; fullscreen; picture-in-picture"
+            title="background"
+          ></VimeoIframe>
+        </VideoContainer>
       </VimeoVideoWrapper>
       <Area className="container">
         <h1>Welcome</h1>
