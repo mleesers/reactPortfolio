@@ -65,7 +65,7 @@ const Logos = styled.div`
     }
 `
 const Github = styled(IoLogoGithub)`
-    margin-right: 1rem;
+    margin-right: .75rem;
     width: 2rem;
     height: 2rem;
     cursor: pointer;
@@ -75,7 +75,7 @@ const Github = styled(IoLogoGithub)`
     }
 `
 const LinkedIn = styled(IoLogoLinkedin)`
-    margin-right: 1rem;
+    margin-right: .75rem;
     width: 2rem;
     height: 2rem;
     cursor: pointer;
@@ -85,7 +85,7 @@ const LinkedIn = styled(IoLogoLinkedin)`
     }
 `
 const Email = styled(FaEnvelope)`
-    margin-right: 1rem;
+    margin-right: .75rem;
     width: 2rem;
     height: 2rem;
     cursor: pointer;
@@ -94,7 +94,7 @@ const Email = styled(FaEnvelope)`
     }
 `
 const Phone = styled(FaPhone)`
-    margin-right: 1rem;
+    margin-right: .75rem;
     width: 2rem;
     height: 2rem;
     cursor: pointer;
@@ -104,7 +104,7 @@ const Phone = styled(FaPhone)`
 `
 
 const ResumeIcon = styled(HiDocumentDownload)`
-    margin-right: 1rem;
+    margin-right: .75rem;
     width: 2rem;
     height: 2rem;
     color: white;
