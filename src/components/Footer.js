@@ -39,14 +39,14 @@ const Copyright = styled.h1`
     font-weight: 400;
     position: absolute;
     right: 0;
-    margin-right: 2rem;
+    margin-right: .5rem;
 `
 const Logo = styled.img`
     height: 4rem;
     width: 4rem;
     position: absolute;
     left: 0;
-    margin-left: 1rem;
+    margin-left: .5rem;
     @media screen and (max-width: 768px) {
         height: 3rem;
         width: 3rem;
