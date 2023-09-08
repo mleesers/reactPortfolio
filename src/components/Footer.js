@@ -8,6 +8,7 @@ import { FaEnvelope, FaPhone } from "react-icons/fa";
 import contactVCF from "../resources/contacts.vcf";
 import Resume from "../resources/Resume.pdf";
 import {HiDocumentDownload} from "react-icons/hi";
+
 const FooterContainer = styled.div`
     background-color: #0d0909;
     display: flex;
