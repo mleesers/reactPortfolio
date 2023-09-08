@@ -3,9 +3,9 @@ import NavBar from './components/navBar'
 import GlobalStyle from './globalStyles';
 import Hero from './components/Hero';
 import AboutMe from './components/AboutMe';
-// import Projects from './components/Projects';
+import Projects from './components/Projects';
 import Footer from './components/Footer';
-// import { ProjectData } from './data/ProjectData';
+import { ProjectData } from './data/ProjectData';
 import Dropdown from './components/Dropdown';
 
 
@@ -24,7 +24,7 @@ function App() {
       <Dropdown isOpen={isOpen} toggle={toggle}/>      
       <Hero/>
       <AboutMe />
-      {/* <Projects slides = {ProjectData} /> */}
+      <Projects slides = {ProjectData} />
       <Footer />
     </>
   );
