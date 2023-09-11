@@ -163,7 +163,7 @@ const Footer = () => {
                 target={item.target}
                 key={index}
                 onClick={() =>
-                (item.title === "Phone Number" && downloadContactCard()) || (item.title === "mleesersmith@gmail.com" && sendEmail()) || (item.title === "Resume" && downloadResume())
+                (item.title === "Phone Number" && downloadContactCard()) || (item.title === "Email" && sendEmail()) || (item.title === "Resume" && downloadResume())
                 }
                 >
                 {item.title}
