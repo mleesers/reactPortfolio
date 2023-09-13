@@ -3,50 +3,6 @@ import { Button } from "./Button";
 import styled, { css } from 'styled-components/macro';
 import { IoMdArrowRoundForward } from 'react-icons/io';
 import { IoArrowForward, IoArrowBack } from 'react-icons/io5';
-import oldPortfolioImage from '../images/oldPortfolio.png';
-import weatherDashboardImage from '../images/Weather.jpg';
-import longRidesImage from '../images/LongRides.jpg';
-import thisDayInSpaceImage from '../images/Space.jpg';
-import hangmanImage from '../images/HangmanWebsite.png';
-
-
-export const ProjectData = [
-    {
-      title: 'My Old Portfolio',
-      label: 'JavaScript, HTML, CSS',
-      image: oldPortfolioImage,
-      link: 'https://github.com/mleesers/Portfolio'
-    }
-    ,
-    {
-      title: 'Weather Dashboard',
-      label: 'JavaScript, HTML, CSS, APIs',
-      image: weatherDashboardImage,
-      link: 'https://github.com/mleesers/Weather-Forecast'
-    }
-    ,
-    {
-      title: 'Long Rides',
-      label: 'APIs, SQL, Node, Express, Heroku',
-      image: longRidesImage,
-      link: 'https://github.com/mleesers/Long_Rides_project_two'
-    }
-    ,
-    {
-      title: 'This Day in Space',
-      label: 'JavaScript, HTML, CSS, APIs',
-      image: thisDayInSpaceImage,
-      link: 'https://github.com/mleesers/This-Day-In-Space'
-    }
-    ,
-    {
-      title: 'Hangman',
-      label: 'HTML, CSS, JavaScript',
-      image: hangmanImage,
-      link: 'https://github.com/mleesers/HangmanWebsite'
-    },
-];
-
 
 const HeroSection = styled.section`
   height: 100vh;
@@ -59,7 +15,6 @@ const HeroSection = styled.section`
   justify-content: center;
   
 `
-
 const HeroWrapper = styled.div`
   width: 85%;
   height: 85%;
@@ -69,7 +24,6 @@ const HeroWrapper = styled.div`
   overflow: hidden;
   position: relative;
 `
-
 const HeroSlide = styled.div`
   z-index: 1;
   width: 100%;
@@ -95,7 +49,6 @@ const HeroSlider = styled.div`
     opacity: 0.4;
     background: linear-gradient(0deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.6) 100%)
 `
-
 const HeroImage = styled.img`
   position: absolute;
   top: 0;
@@ -182,14 +135,11 @@ const PrevArrow = styled(IoArrowBack)`
   ${arrowButtons}
 `
 const NextArrow = styled(IoArrowForward)`
-  ${arrowButtons}`
-
-  
-const Projects = () => {
-  const slides = ProjectData;
+  ${arrowButtons}
+`
+const Projects = ({ slides }) => {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
-  console.log(length);
   const timeout = useRef(null);
   const [titleVisible, setTitleVisible] = useState(false);
 
