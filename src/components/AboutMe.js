@@ -90,7 +90,7 @@ const AboutMe = () => {
         if (position < windowHeight && position > -element.offsetHeight) {
           setIsVisible(true);
         } else {
-          // setIsVisible(false);
+          // setIsVisible(false) please;
           console.log('not visible')
         }
       };
