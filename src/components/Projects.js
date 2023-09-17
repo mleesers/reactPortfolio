@@ -134,6 +134,9 @@ const Title = styled.h1`
       opacity: 1;
       transform: translateX(0);
     `}
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `
 const PrevArrow = styled(IoArrowBack)`
   ${arrowButtons}
