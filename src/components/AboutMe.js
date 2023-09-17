@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components/macro';
 import me from '../images/me.jpg';
 import { BiUpArrowAlt } from 'react-icons/bi';
@@ -73,27 +73,45 @@ const TextArea = styled.div`
 `;
 
 const AboutMe = () => {
+  const aboutMeRef = useRef(null);
+  const titleRef = useRef(null);
+
   useEffect(() => {
-    const handleScroll = () => {
-      const element = document.getElementById('about');
-      const position = element.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-
-      if (position < windowHeight && position > -element.offsetHeight) {
-        element.classList.add('visible');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          aboutMeRef.current.classList.add('visible');
+          titleRef.current.classList.add('visible');
+          observer.unobserve(aboutMeRef.current);
+          observer.unobserve(titleRef.current);
+        }
+      },
+      {
+        threshold: 0.1, // Adjust this value as needed
       }
-    };
+    );
 
-    window.addEventListener('scroll', handleScroll);
+    if (aboutMeRef.current) {
+      observer.observe(aboutMeRef.current);
+    }
+    if (titleRef.current) {
+      observer.observe(titleRef.current);
+    }
+
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      if (aboutMeRef.current) {
+        observer.unobserve(aboutMeRef.current);
+      }
+      if (titleRef.current) {
+        observer.unobserve(titleRef.current);
+      }
     };
   }, []);
 
   return (
     <AboutMeSection id="about">
-      <SectionTitle>About Me</SectionTitle>
-      <MainArea>
+      <SectionTitle ref={titleRef}>About Me</SectionTitle>
+      <MainArea ref={aboutMeRef}>
         <Photo>
           <img src={me} id="myImage" alt="me" />
           <h1>That's me {<BiUpArrowAlt />} :)</h1>
