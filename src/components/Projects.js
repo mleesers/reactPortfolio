@@ -3,49 +3,6 @@ import { Button } from "./Button";
 import styled, { css } from 'styled-components/macro';
 import { IoMdArrowRoundForward } from 'react-icons/io';
 import { IoArrowForward, IoArrowBack } from 'react-icons/io5';
-import oldPortfolioImage from '../images/oldPortfolio.png';
-import weatherDashboardImage from '../images/Weather.jpg';
-import longRidesImage from '../images/LongRides.jpg';
-import thisDayInSpaceImage from '../images/Space.jpg';
-import hangmanImage from '../images/HangmanWebsite.png';
-
-
-export const ProjectData = [
-    {
-      title: 'My Old Portfolio',
-      label: 'JavaScript, HTML, CSS',
-      image: oldPortfolioImage,
-      link: 'https://github.com/mleesers/Portfolio'
-    }
-    ,
-    {
-      title: 'Weather Dashboard',
-      label: 'JavaScript, HTML, CSS, APIs',
-      image: weatherDashboardImage,
-      link: 'https://github.com/mleesers/Weather-Forecast'
-    }
-    ,
-    {
-      title: 'Long Rides',
-      label: 'APIs, SQL, Node, Express, Heroku',
-      image: longRidesImage,
-      link: 'https://github.com/mleesers/Long_Rides_project_two'
-    }
-    ,
-    {
-      title: 'This Day in Space',
-      label: 'JavaScript, HTML, CSS, APIs',
-      image: thisDayInSpaceImage,
-      link: 'https://github.com/mleesers/This-Day-In-Space'
-    }
-    ,
-    {
-      title: 'Hangman',
-      label: 'HTML, CSS, JavaScript',
-      image: hangmanImage,
-      link: 'https://github.com/mleesers/HangmanWebsite'
-    },
-];
 
 
 const HeroSection = styled.section`
@@ -185,8 +142,7 @@ const NextArrow = styled(IoArrowForward)`
   ${arrowButtons}`
 
   
-const Projects = () => {
-  const slides = ProjectData;
+const Projects = ({slides}) => {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
   console.log(length);

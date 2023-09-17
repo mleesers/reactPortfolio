@@ -6,8 +6,7 @@ import AboutMe from './components/AboutMe';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
 import Dropdown from './components/Dropdown';
-
-
+import { ProjectData } from './data/ProjectData';
 
 
 function App() {
@@ -23,7 +22,7 @@ function App() {
       <Dropdown isOpen={isOpen} toggle={toggle}/>      
       <Hero/>
       <AboutMe />
-      <Projects/>
+      <Projects slides = {ProjectData}/>
       <Footer />
     </>
   );
