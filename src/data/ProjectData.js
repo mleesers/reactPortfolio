@@ -6,6 +6,13 @@
 
 
 export const ProjectData = [
+  {
+    title: 'This Day in Space',
+    label: 'JavaScript, HTML, CSS, APIs',
+    image: 'https://i.imgur.com/NKBSfV1.jpg',
+    link: 'https://github.com/mleesers/This-Day-In-Space'
+  }
+  ,
     {
       title: 'My Old Portfolio',
       label: 'JavaScript, HTML, CSS',
@@ -25,13 +32,6 @@ export const ProjectData = [
       label: 'APIs, SQL, Node, Express, Heroku',
       image: 'https://i.imgur.com/YDmNFsc.jpg',
       link: 'https://github.com/mleesers/Long_Rides_project_two'
-    }
-    ,
-    {
-      title: 'This Day in Space',
-      label: 'JavaScript, HTML, CSS, APIs',
-      image: 'https://i.imgur.com/NKBSfV1.jpg',
-      link: 'https://github.com/mleesers/This-Day-In-Space'
     }
     ,
     {
