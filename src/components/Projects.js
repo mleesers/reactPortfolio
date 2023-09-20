@@ -143,9 +143,6 @@ const Title = styled.h1`
 `
 const PrevArrow = styled(IoArrowBack)`
   ${arrowButtons}
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
 `
 const NextArrow = styled(IoArrowForward)`
   ${arrowButtons}`
@@ -202,7 +199,6 @@ const Projects = ({slides}) => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
   return (
     <HeroSection id='projects'>
       <Title isVisible={titleVisible} id="projectTitle">
