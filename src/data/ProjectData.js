@@ -1,9 +1,3 @@
-// import oldPortfolioImage from '../images/oldPortfolio.png';
-// import weatherDashboardImage from '../images/Weather.jpg';
-// import longRidesImage from '../images/LongRides.jpg';
-// import thisDayInSpaceImage from '../images/Space.jpg';
-// import hangmanImage from '../images/HangmanWebsite.png';
-
 
 export const ProjectData = [
   {

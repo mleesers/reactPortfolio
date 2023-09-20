@@ -28,7 +28,7 @@ const HeroWrapper = styled.div`
 `
 
 const HeroSlide = styled.div`
-  z-index: 1;
+  z-index: ${props => props.active ? '10' : '1'};
   width: 100%;
   height: 100%;
 `
@@ -82,8 +82,11 @@ const HeroContent = styled.div`
     margin-bottom: 0.8rem;
   }
   p{
-    margin-bottom: 1.2rem;
+    margin-bottom: 2rem;
     text-shadow: 0px 0px 20px rgba(0,0,0,0.4);
+  }
+  @media screen and (max-width: 768px) {'
+    z-index: 100;
   }
 `
 const Arrow = styled(IoMdArrowRoundForward)`
@@ -112,7 +115,7 @@ const arrowButtons = css`
     transform: scale(1.05);
   }
   @media screen and (max-width: 768px) {
-    z-index: 15;
+    z-index: 1;
     width: 40px;
     height: 40px;
     padding: 5px;
@@ -140,6 +143,9 @@ const Title = styled.h1`
 `
 const PrevArrow = styled(IoArrowBack)`
   ${arrowButtons}
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `
 const NextArrow = styled(IoArrowForward)`
   ${arrowButtons}`
@@ -148,7 +154,6 @@ const NextArrow = styled(IoArrowForward)`
 const Projects = ({slides}) => {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
-  console.log(length);
   const timeout = useRef(null);
   const [titleVisible, setTitleVisible] = useState(false);
 
