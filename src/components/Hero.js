@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components/macro';
 
 const HeroSection = styled.section`
@@ -52,8 +52,26 @@ const Area = styled.div`
     margin-left: 10px;
   }
 `;
+const Loader = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 4px solid black;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
 
+  @keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+`;
 const Hero = () => {
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://player.vimeo.com/api/player.js";
@@ -65,9 +83,20 @@ const Hero = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (window.Vimeo) {
+      const player = new window.Vimeo.Player(document.querySelector('iframe'));
+
+      player.on('loaded', () => {
+        setLoading(false);
+      });
+    }
+  }, []);
+
   return (
     <HeroSection>
       <VimeoVideoWrapper>
+        {loading && <Loader />}
         <VimeoIframe 
           src="https://player.vimeo.com/video/859574925?autoplay=1&loop=1&controls=0&byline=0&title=0&portrait=0&background=1"
           allow="autoplay; fullscreen; picture-in-picture"
