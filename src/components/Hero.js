@@ -57,7 +57,7 @@ const Loader = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 4px solid rgba(255, 255, 255, 0.3);
+  border: 4px solid linear-gradient(#12091E,#D05E1D,#E1B24D);;
   border-radius: 50%;
   border-top: 4px solid black;
   width: 40px;

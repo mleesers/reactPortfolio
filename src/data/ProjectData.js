@@ -1,4 +1,3 @@
-
 export const ProjectData = [
   {
     title: 'This Day in Space',
