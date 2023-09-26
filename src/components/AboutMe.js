@@ -115,8 +115,8 @@ const AboutMe = () => {
                 Tech with an expected graduation date of December 2023. I have a certificate from a full-stack 
                 coding boot camp at the University of Texas at Austin. I am married to my wife, Crystal, and we   
                 have a one-year-old daughter together. We live together with our beautiful fur babies in Lubbock, TX
-                where I am currently completing my bachelor's of science.. I thrive on problem-solving and I'm always eager to dive into new technologies. 
-                For a comprehensive look at my capabilities and projects, don't hesitate to browse through my resume and GitHub. Looking forward to collaborating!"
+                where I am currently completing my bachelor's of science. I thrive on problem-solving and I'm always eager to dive into new technologies. 
+                For a comprehensive look at my capabilities and projects, don't hesitate to browse through my resume and GitHub. Looking forward to collaborating!
             </h1>
           </TextArea>
         </MainArea>
