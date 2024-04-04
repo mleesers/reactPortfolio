@@ -111,9 +111,9 @@ const AboutMe = () => {
             <h1>That's me {<BiUpArrowAlt />} :)</h1>
           </Photo>
           <TextArea id="text">
-            <h1>Hello World! I'm currently employed as an App Developer for the City of Lubbock. I earned my Bachelor of Science in Computer Science from Texas Tech University and furthered my skills with a certificate from a full-stack coding boot camp at the University of Texas at Austin.</h1>
+            <h1>Hello World! I'm currently employed as an App Developer for the City of Lubbock where I learn everyday! I earned my Bachelor of Science in Computer Science from Texas Tech University and furthered my skills with a certificate from a full-stack coding boot camp at the University of Texas at Austin.</h1>
             <br />
-            <h1>I'm happily married to my wife, Crystal, and we're blessed with a two-year-old daughter. Our little family resides in Lubbock, TX, along with our adorable fur babies. Currently, I'm completing my Bachelor of Science degree while thriving on problem-solving challenges and eagerly exploring new technologies.</h1>
+            <h1>I'm happily married to my wife, Crystal, and we're blessed with a two-year-old daughter. Our little family resides in Lubbock, TX, along with our adorable fur babies.</h1>
             <br />
             <h1>For a comprehensive view of my capabilities and projects, feel free to browse through my resume and GitHub. I'm excited about the opportunity to collaborate!</h1>
           </TextArea>
